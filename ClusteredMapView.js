@@ -34,7 +34,7 @@ export default class ClusteredMapView extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         const nextData = this.getClusters(nextState.region);
 
-        return !_isEqual(nextData, this.state.data);
+        return !_isEqual(nextData, this.state.data) || this.props.children !== nextProps.children;
     }
 
     componentDidMount() {
